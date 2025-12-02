@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R. Abraham Albert | Game Developer Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles to achieve the high-contrast, monochrome, and clean aesthetic */
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #f7f7f7;
+            --accent-color: #808080; /* Subtle grey for borders/dividers */
+            --header-font: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--header-font);
+            color: var(--primary-color);
+            background-color: var(--secondary-color);
+            line-height: 1.6;
+        }
+
+        /* Enforce high contrast and sharp edges */
+        .section-divider {
+            height: 1px;
+            background-color: var(--accent-color);
+        }
+        
+        /* Typography based on the video's look */
+        .header-text {
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 900;
+            line-height: 0.85;
+            letter-spacing: -0.05em;
+        }
+
+        .sub-header-text {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+
+        /* Custom scroll marquee effect for the intro banner */
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 0.5rem 0;
+            border-top: 1px solid var(--accent-color);
+            border-bottom: 1px solid var(--accent-color);
+        }
+
+        .marquee-content {
+            display: inline-block;
+            padding-right: 100%; /* Ensure content wraps visually */
+            animation: marquee 30s linear infinite; /* Smooth, continuous scroll */
+        }
+
+        @keyframes marquee {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
+        }
+
+        /* Card and Hover Effects for Skills/Projects */
+        .skill-item, .project-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid var(--accent-color);
+        }
+
+        .skill-item:hover {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Profile image style (circular black/white) */
+        .profile-img {
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid var(--primary-color);
+            filter: grayscale(100%);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Icon styling (using simple SVG for clean look) */
+        .icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Header Section: Main Portfolio Title -->
+    <header class="container mx-auto px-4 py-16 md:py-24">
+        <div class="flex flex-col md:flex-row justify-between items-start">
+            <h1 class="header-text text-left">
+                2025<br>PORT<br>FOLIO.
+            </h1>
+            <div class="mt-8 md:mt-0 md:text-right">
+                <p class="sub-header-text text-sm md:text-base">
+                    Selected Works of<br>
+                    <span class="text-xl md:text-3xl font-bold block mt-1">GAME DEVELOPMENT</span>
+                </p>
+                <p class="mt-4 text-xs md:text-sm max-w-xs md:ml-auto">
+                    A collection showcasing technical proficiency in **C++, Unity, and AI behavior**, driven by a passion for crafting soulful, immersive gaming experiences.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Marquee Banner: Smooth Animation -->
+    <div class="marquee-container">
+        <div class="marquee-content font-bold text-lg md:text-2xl tracking-widest uppercase">
+            &nbsp;&nbsp;◆&nbsp; WELCOME TO MY PORTFOLIO. LET'S WORK TOGETHER! &nbsp;◆&nbsp; ENTRY-LEVEL GAME DEV SPECIALIST &nbsp;◆&nbsp; UNITY & C++ &nbsp;◆&nbsp;
+            &nbsp;&nbsp;◆&nbsp; WELCOME TO MY PORTFOLIO. LET'S WORK TOGETHER! &nbsp;◆&nbsp; ENTRY-LEVEL GAME DEV SPECIALIST &nbsp;◆&nbsp; UNITY & C++ &nbsp;◆&nbsp;
+        </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <main class="container mx-auto px-4 py-16 md:py-24 space-y-20 md:space-y-32">
+
+        <!-- 1. ABOUT SECTION -->
+        <section id="about">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-8 uppercase tracking-wider">About.</h2>
+            <div class="grid md:grid-cols-3 gap-12 items-start">
+                
+                <!-- Personal Info Column -->
+                <div class="col-span-1 border-r border-gray-300 pr-8">
+                    <!-- Replaced profile image: primary tries the uploaded screenshot, fallback to the container UUID image, then to placeholder -->
+                  <img src="profile.png"
+     alt="R. Abraham Albert Profile Image"
+     class="profile-img w-36 h-36 md:w-48 md:h-48 mb-6 mx-auto">
+     
+                    <p class="text-lg font-semibold mb-2">R. Abraham Albert</p>
+                    <p class="text-sm text-gray-700">Entry-Level Game Developer | Unity & C++ Specialist</p>
+                    <div class="mt-4 space-y-1 text-sm">
+                        <p><strong><span class="icon">✉</span> Email:</strong> <a href="mailto:abrahamalbert1012@gmail.com" class="underline hover:text-blue-600">abrahamalbert1012@gmail.com</a></p>
+                        <p><strong><span class="icon">☎</span> Phone:</strong> +91-8925049893</p>
+                        <p><strong><span class="icon">⌖</span> Location:</strong> Chennai, India</p>
+                    </div>
+                </div>
+
+                <!-- Summary & Bio Column -->
+                <div class="md:col-span-2 text-base md:text-lg">
+                    <p class="font-medium text-xl mb-4">
+                        "Just a man who wants to make soulful games."
+                    </p>
+                    <p class="mb-4">
+                        I am a passionate and results-driven Entry-Level Game Developer with a strong foundation in **C++ programming** and **3D modeling using Blender**. My focus is on crafting immersive gaming experiences, developing engaging storylines, and creating detailed storyboards.
+                    </p>
+                    <p class="mb-4">
+                        I am actively learning Unity and have experience with Unreal Engine and Blender. I seek to leverage my technical skills and creative aptitude, specifically in gameplay systems and **creature AI behavior**, to contribute to innovative game projects during an online game development internship.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Divider -->
+        <div class="section-divider"></div>
+
+        <!-- 2. SKILLS SECTION -->
+        <section id="skills">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-8 uppercase tracking-wider">Skills.</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Skill Block 1: Programming Languages -->
+                <div class="skill-group">
+                    <h3 class="sub-header-text text-xl mb-4 border-b pb-2 border-gray-300">Programming</h3>
+                    <div class="space-y-3">
+                        <div class="skill-item p-4 rounded-md">
+                            <p class="font-bold">C++</p>
+                            <p class="text-xs text-gray-600">Strong foundation in game system implementation.</p>
+                        </div>
+                        <div class="skill-item p-4 rounded-md">
+                            <p class="font-bold">C# (Unity)</p>
+                            <p class="text-xs text-gray-600">Actively learning, building core gameplay logic.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Block 2: Engines & Tools -->
+                <div class="skill-group">
+                    <h3 class="sub-header-text text-xl mb-4 border-b pb-2 border-gray-300">Engines & Tools</h3>
+                    <div class="space-y-3">
+                        <div class="skill-item p-4 rounded-md">
+                            <p class="font-bold">Unity</p>
+                            <p class="text-xs text-gray-600">Building gameplay systems & interactive worlds.</p>
+                        </div>
+                        <div class="skill-item p-4 rounded-md">
+                            <p class="font-bold">Unreal Engine</p>
+                            <p class="text-xs text-gray-600">Familiarity with environment and game setup.</p>
+                        </div>
+                        <div class="skill-item p-4 rounded-md">
+                            <p class="font-bold">Blender</p>
+                            <p class="text-xs text-gray-600">Proficient in 3D Modeling and 3D Animation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Block 3: Game Systems -->
+                <div class="skill-group">
+                    <h3 class="sub-header-text text-xl mb-4 border-b pb-2 border-gray-300">Core Systems</h3>
+                    <div class="space-y-3">
+                        <div class="skill-item p-4 rounded-md">
+                            <p class="font-bold">AI Behavior Trees</p>
+                            <p class="text-xs text-gray-600">Experience with personality-driven creature AI.</p>
+                        </div>
+                        <div class="skill-item p-4 rounded-md">
+                            <p class="font-bold">Gameplay Programming</p>
+                            <p class="text-xs text-gray-600">Movement, save-states, custom inventories.</p>
+                        </div>
+                        <div class="skill-item p-4 rounded-md">
+                            <p class="font-bold">Level Design & Scripting</p>
+                            <p class="text-xs text-gray-600">Focus on optimization and player flow.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Block 4: Creative & Other -->
+                <div class="skill-group">
+                    <h3 class="sub-header-text text-xl mb-4 border-b pb-2 border-gray-300">Creative & Languages</h3>
+                    <div class="space-y-3">
+                        <div class="skill-item p-4 rounded-md">
+                            <p class="font-bold">Story Writing & Storyboarding</p>
+                            <p class="text-xs text-gray-600">Bringing narrative and vision to life.</p>
+                        </div>
+                        <div class="skill-item p-4 rounded-md">
+                            <p class="font-bold">Japanese (JLPT N2)</p>
+                            <p class="text-xs text-gray-600">High proficiency.</p>
+                        </div>
+                        <div class="skill-item p-4 rounded-md">
+                            <p class="font-bold">English (TOEFL IBT 89)</p>
+                            <p class="text-xs text-gray-600">Advanced level.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Divider -->
+        <div class="section-divider"></div>
+
+        <!-- 3. EXPERIENCE & PROJECTS SECTION (Combined for impact) -->
+        <section id="work">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-8 uppercase tracking-wider">Experience & Projects.</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                
+                <!-- Left Column: Professional Experience -->
+                <div>
+                    <h3 class="sub-header-text text-2xl mb-6">Professional Experience</h3>
+                    
+                    <!-- Ubisoft Internship -->
+                    <div class="border p-6 rounded-lg mb-6 project-card">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold">Intern Programmer</h4>
+                            <span class="text-sm font-medium">Nov 2024 - Jul 2025</span>
+                        </div>
+                        <p class="text-lg font-semibold text-gray-800 mb-3">Ubisoft (Location: Remote/Unannounced Title)</p>
+                        <ul class="list-disc list-inside text-sm space-y-2">
+                            <li>Implemented a comprehensive **checkpoint and save-state system** for an unannounced title using **C++** and proprietary engine tools.</li>
+                            <li>Debugged and optimized movement controller scripts, successfully reducing reported bugs in the alpha build by **15%**.</li>
+                            <li>Gained hands-on experience in a professional AAA development pipeline and code review process.</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="sub-header-text text-2xl mt-12 mb-6">Academic & Certifications</h3>
+                     <!-- Education/Certifications -->
+                    <div class="border p-6 rounded-lg project-card">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-bold">Game Design and Development with Unity</h4>
+                            <span class="text-sm font-medium">Nov 2024 - Jun 2025</span>
+                        </div>
+                        <p class="text-md font-semibold text-gray-800 mb-3">Michigan State University (Certification)</p>
+                        <ul class="list-disc list-inside text-sm space-y-2">
+                            <li>**Diploma in Electrical and Electronics Engineering** (Thiru Seven Hills Polytechnic, Jun 2023 - May 2026).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right Column: Personal Projects -->
+                <div>
+                    <h3 class="sub-header-text text-2xl mb-6">Key Personal Projects</h3>
+                    
+                    <!-- Monster Catching Game -->
+                    <div class="border p-6 rounded-lg mb-6 project-card">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold">Monster Catching Game Concept</h4>
+                            <span class="text-sm font-medium">Oct 2024 - Present</span>
+                        </div>
+                        <p class="text-lg font-semibold text-gray-800 mb-3">Focus: Pokémon-style systems & Creature AI</p>
+                        <ul class="list-disc list-inside text-sm space-y-2">
+                            <li>Developed a **custom inventory and creature capture system** using Unity/C#.</li>
+                            <li>Implemented a **personality-driven overworld creature spawner** (timid/aggressive/curious) using Godot 4 (a versatile engine used for rapid prototyping).</li>
+                            <li>Designed and scripted **stealth and reaction mechanics** for player interaction.</li>
+                            <li>Integrated simple terrain generation and creature clustering logic for world design.</li>
+                        </ul>
+                    </div>
+
+                     <!-- Blender Asset Creation Project -->
+                    <div class="border p-6 rounded-lg project-card">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold">Blender 3D Asset Library</h4>
+                            <span class="text-sm font-medium">Ongoing</span>
+                        </div>
+                        <p class="text-lg font-semibold text-gray-800 mb-3">Focus: 3D Modeling & Animation</p>
+                        <ul class="list-disc list-inside text-sm space-y-2">
+                            <li>Creation of low-poly and mid-poly assets optimized for game engines (Unity/Unreal).</li>
+                            <li>Practice in **3D animation** (walk cycles, idle states) suitable for creature/character implementation.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Divider -->
+        <div class="section-divider"></div>
+
+        <!-- 4. Contact/Footer Section -->
+        <footer class="text-center py-8">
+            <h2 class="sub-header-text text-lg md:text-2xl mb-4">Let's craft soulful worlds.</h2>
+            <p class="text-3xl md:text-5xl font-extrabold mb-4 hover:text-gray-700 transition duration-300">
+                <a href="mailto:abrahamalbert1012@gmail.com">abrahamalbert1012@gmail.com</a>
+            </p>
+            <p class="text-sm text-gray-600 mt-6">
+                &copy; 2025 R. Abraham Albert. Game Development Portfolio.
+            </p>
+        </footer>
+
+    </main>
+
+    <script>
+        // JavaScript for smooth scrolling (if implementing an anchor link navigation later)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Set up the intersection observer for smooth animation reveals on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        });
+
+        document.querySelectorAll('section > *').forEach(element => {
+            // Apply initial hidden state to elements we want to animate
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(element);
+        });
+
+        // Duplicating the marquee content dynamically to ensure smooth, continuous loop
+        const marqueeContent = document.querySelector('.marquee-content');
+        if (marqueeContent) {
+            marqueeContent.innerHTML += marqueeContent.innerHTML;
+        }
+
+    </script>
+</body>
+</html>
